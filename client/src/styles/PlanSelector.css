@@ -1,0 +1,58 @@
+.plan-selector {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 4px 4px;
+  margin-bottom: 8px;
+}
+
+.selector-label {
+  font-size: 15px;
+  font-weight: 800;
+  color: #25150f;
+  white-space: nowrap;
+  margin-right: 2px;
+}
+
+.plan-tabs {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 999px;
+  border: 1px solid #eadfcb;
+}
+
+.plan-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 20px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  color: #4f4f4f;
+}
+
+.plan-tab:hover {
+  color: #862016;
+  border-color: #e8cfbf;
+}
+
+.plan-tab.active {
+  color: #862016;
+  border-color: #862016;
+  box-shadow: inset 0 -2px 0 #862016;
+  background: #fffaf7;
+}
+
+.plan-icon {
+  font-size: 16px;
+  opacity: 0.85;
+}

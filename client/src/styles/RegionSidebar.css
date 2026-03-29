@@ -1,0 +1,66 @@
+.region-sidebar {
+  width: 250px;
+  background: rgba(255, 255, 255, 0.72);
+  border-radius: 0 0 12px 12px;
+  padding: 6px 10px 12px;
+  border: 1px solid #eadfcb;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  height: fit-content;
+  position: sticky;
+  top: 64px;
+}
+
+.sidebar-title {
+  display: none;
+}
+
+.region-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.region-btn {
+  text-align: center;
+  padding: 10px 8px;
+  background: linear-gradient(180deg, #ffffff, #f8f3e9);
+  border: 1px solid #e8dcca;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.region-btn:hover {
+  transform: translateX(2px);
+  box-shadow: 0 4px 14px rgba(152, 31, 20, 0.12);
+}
+
+.region-btn.active {
+  background: linear-gradient(180deg, #ca150d, #b10f08);
+  border-color: #a10a03;
+  box-shadow: 0 3px 12px rgba(174, 26, 16, 0.25);
+}
+
+.region-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #7b2013;
+  line-height: 1.2;
+}
+
+.region-desc {
+  font-size: 12px;
+  color: #b09f87;
+  line-height: 1.25;
+}
+
+.region-btn.active .region-name {
+  color: #fff;
+}
+
+.region-btn.active .region-desc {
+  color: rgba(255, 255, 255, 0.85);
+}

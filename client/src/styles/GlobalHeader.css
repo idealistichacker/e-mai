@@ -1,0 +1,89 @@
+.global-header {
+  background: #efe9d8;
+  border-bottom: 1px solid rgba(139, 69, 19, 0.18);
+  padding: 6px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo-image {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+}
+
+.header-nav {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  margin-left: 28px;
+  justify-content: center;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  color: #1f1f1f;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  transition: all 0.3s ease;
+  padding: 6px 10px;
+  border-radius: 4px;
+}
+
+.nav-item:hover {
+  background-color: rgba(139, 0, 0, 0.06);
+  color: #8B0000;
+}
+
+.nav-text {
+  white-space: nowrap;
+}
+
+.user-section {
+  flex-shrink: 0;
+  margin-left: 14px;
+}
+
+.user-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #d8d8d8;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 0;
+}
+
+.user-btn:hover {
+  border-color: #8B0000;
+}
+
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

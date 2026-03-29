@@ -1,0 +1,260 @@
+.dashboard {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5efe2;
+  background-image:
+    radial-gradient(circle at 18% 20%, rgba(190, 156, 109, 0.08) 0%, transparent 34%),
+    radial-gradient(circle at 82% 22%, rgba(154, 124, 90, 0.08) 0%, transparent 30%),
+    linear-gradient(180deg, #f7f1e3 0%, #f3ebdc 52%, #f0e7d7 100%);
+  background-size: auto;
+  background-position: center;
+  position: relative;
+}
+
+.dashboard::before,
+.dashboard::after {
+  content: '';
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.82;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.dashboard::before {
+  left: 0;
+  width: min(26vw, 360px);
+  height: min(25vh, 220px);
+  background-image: url('/demo-assets/backgrounds/left-mountain.png');
+  background-position: left bottom;
+}
+
+.dashboard::after {
+  right: 0;
+  width: min(28vw, 390px);
+  height: min(25vh, 220px);
+  background-image: url('/demo-assets/backgrounds/right-mountain.png');
+  background-position: right bottom;
+}
+
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 250px minmax(700px, 1fr) 318px;
+  gap: 12px;
+  padding: 8px 14px 20px;
+  max-width: 1540px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.left-column {
+  min-width: 250px;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.right-column {
+  min-width: 318px;
+}
+
+/* 播放器模态框 */
+.player-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.player-modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 900px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: auto;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
+}
+
+.modal-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s ease;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-btn:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.player-modal :global(.player-container) {
+  flex: 1;
+  min-width: 500px;
+}
+
+.course-details {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.course-details h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.course-details p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.course-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 12px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.meta-item {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* 响应式设计 */
+@media (max-width: 1400px) {
+  .dashboard-container {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .right-column {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .left-column {
+    display: none;
+  }
+
+  .right-column {
+    display: none;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .player-modal :global(.player-container) {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .course-details {
+    flex: none;
+    width: 100%;
+    min-width: auto;
+  }
+
+  .dashboard::before,
+  .dashboard::after {
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .modal-body {
+    padding: 12px;
+    flex-direction: column;
+  }
+
+  .modal-header {
+    padding: 12px;
+  }
+
+  .modal-header h3 {
+    font-size: 16px;
+  }
+}
