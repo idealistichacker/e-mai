@@ -11,17 +11,22 @@ import '../styles/ContentMatrix.css';
  */
 const ContentMatrix = () => {
   const dispatch = useDispatch();
-  const { courses, stages, coursesLoading, coursesError } = useSelector(state => state.courses);
+  const { courses, stages, coursesLoading, coursesError, selectedPlan, plans } = useSelector(state => state.courses);
+
+  const currentPlanName = plans.find(p => p.id === selectedPlan)?.name || '青苗计划';
+
+  // 按选中计划过滤课程
+  const planCourses = courses.filter(c => c.plan === selectedPlan);
 
   // 按学段分组课程
   const coursesByStage = {};
   stages.forEach(stage => {
-    coursesByStage[stage.id] = courses.filter(c => c.stage === stage.id);
+    coursesByStage[stage.id] = planCourses.filter(c => c.stage === stage.id);
   });
 
   return (
-    <div className="content-matrix">
-      <div className="matrix-title-bar">青苗计划</div>
+    <div key={selectedPlan} className="content-matrix fade-in">
+      <div className="matrix-title-bar">{currentPlanName}</div>
       {coursesLoading ? (
         <div className="no-courses">课程加载中...</div>
       ) : coursesError ? (

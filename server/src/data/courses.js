@@ -6,6 +6,7 @@ export const coursesData = [
   {
     id: 'xiaoxue-001',
     title: '枣娃的故事',
+    plan: 'qingmiao',
     stage: 'xiaoxue',
     category: 'culture',
     description: '乐陵金丝小枣文化启蒙课',
@@ -23,6 +24,7 @@ export const coursesData = [
   {
     id: 'chuxue-001',
     title: '乐陵泥土的艺术',
+    plan: 'qingmiao',
     stage: 'chuxue',
     category: 'craft',
     description: '传统农耕与泥土文化认知课程',
@@ -40,6 +42,7 @@ export const coursesData = [
   {
     id: 'gaoxue-001',
     title: '为“金丝小枣”设计未来',
+    plan: 'qingmiao',
     stage: 'gaoxue',
     category: 'project',
     description: 'PBL项目课：金丝小枣文化创新设计',
@@ -52,6 +55,42 @@ export const coursesData = [
     instructor: '课程讲师',
     createdAt: '2024-01-25',
     views: 3450,
+    completed: false
+  },
+  {
+    id: 'guiyan-001',
+    title: '归雁归乡创业指导',
+    plan: 'guiyan',
+    stage: 'gaoxue', // 暂挂靠在高中段，以免无法显示，或前端可不分段显示
+    category: 'project',
+    description: '中青年回乡创业政策与文化指引',
+    bvid: 'BV1Wj411w7K1',
+    pageNumber: 1,
+    imageUrl: '/images/daxue-001.png',
+    imageColor: '#4ECDC4',
+    tags: ['创业', '寻根'],
+    duration: 3000,
+    instructor: '青年讲师',
+    createdAt: '2024-03-01',
+    views: 1250,
+    completed: false
+  },
+  {
+    id: 'sangyu-001',
+    title: '桑榆非遗记忆长廊',
+    plan: 'sangyu',
+    stage: 'gaoxue', // 暂挂靠在高中段
+    category: 'culture',
+    description: '中老年非遗文化回忆与传承',
+    bvid: 'BV1Wj411w7K1',
+    pageNumber: 1,
+    imageUrl: '/images/daxue-002.png',
+    imageColor: '#45B7D1',
+    tags: ['非遗', '长者'],
+    duration: 2500,
+    instructor: '非遗传承人',
+    createdAt: '2024-03-05',
+    views: 3820,
     completed: false
   }
 ];

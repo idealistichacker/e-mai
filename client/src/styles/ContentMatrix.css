@@ -7,6 +7,21 @@
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
+.fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0.1;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .matrix-title-bar {
   font-size: 30px;
   font-weight: 800;
