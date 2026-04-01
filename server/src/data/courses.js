@@ -61,7 +61,7 @@ export const coursesData = [
     id: 'guiyan-001',
     title: '归雁归乡创业指导',
     plan: 'guiyan',
-    stage: 'gaoxue', // 暂挂靠在高中段，以免无法显示，或前端可不分段显示
+    stage: 'guiyan_course',
     category: 'project',
     description: '中青年回乡创业政策与文化指引',
     bvid: 'BV1Wj411w7K1',
@@ -79,7 +79,7 @@ export const coursesData = [
     id: 'sangyu-001',
     title: '桑榆非遗记忆长廊',
     plan: 'sangyu',
-    stage: 'gaoxue', // 暂挂靠在高中段
+    stage: 'sangyu_course', 
     category: 'culture',
     description: '中老年非遗文化回忆与传承',
     bvid: 'BV1Wj411w7K1',

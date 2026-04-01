@@ -17,10 +17,11 @@ const ContentMatrix = () => {
 
   // 按选中计划过滤课程
   const planCourses = courses.filter(c => c.plan === selectedPlan);
+  const planStages = stages.filter(s => s.plan === selectedPlan);
 
   // 按学段分组课程
   const coursesByStage = {};
-  stages.forEach(stage => {
+  planStages.forEach(stage => {
     coursesByStage[stage.id] = planCourses.filter(c => c.stage === stage.id);
   });
 
@@ -42,7 +43,7 @@ const ContentMatrix = () => {
         </div>
       ) : (
         <div className="matrix-grid">
-          {stages.map(stage => (
+          {planStages.map(stage => (
             <div key={stage.id} className="stage-group">
               <div className="stage-header">
                 <span className="stage-name">{stage.name}</span>

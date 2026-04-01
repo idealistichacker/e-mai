@@ -39,9 +39,11 @@ const initialState = {
     { id: 'sangyu', name: '桑榆计划', color: '#45B7D1', description: '中老年生命价值' }
   ],
   stages: [
-    { id: 'xiaoxue', name: '小学', icon: '📚', order: 1 },
-    { id: 'chuxue', name: '初中', icon: '📖', order: 2 },
-    { id: 'gaoxue', name: '高中', icon: '📚', order: 3 }
+    { id: 'xiaoxue', name: '小学', icon: '📚', order: 1, plan: 'qingmiao' },
+    { id: 'chuxue', name: '初中', icon: '📖', order: 2, plan: 'qingmiao' },
+    { id: 'gaoxue', name: '高中', icon: '📚', order: 3, plan: 'qingmiao' },
+    { id: 'guiyan_course', name: '归雁课程', icon: '🌟', order: 1, plan: 'guiyan' },
+    { id: 'sangyu_course', name: '桑榆课程', icon: '🌿', order: 1, plan: 'sangyu' }
   ],
   selectedRegion: null,
   selectedPlan: 'qingmiao',
