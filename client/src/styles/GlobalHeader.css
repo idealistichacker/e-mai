@@ -87,3 +87,34 @@
   object-fit: cover;
   display: block;
 }
+
+/* 响应式 */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 10px;
+    height: 44px;
+    gap: 8px;
+  }
+  
+  .logo-image {
+    height: 28px;
+  }
+
+  .header-nav {
+    margin-left: 0;
+    gap: 4px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 2px;
+  }
+  
+  .header-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .nav-item {
+    font-size: 13px;
+    padding: 4px 6px;
+  }
+}
